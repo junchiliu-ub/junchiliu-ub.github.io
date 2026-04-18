@@ -4,7 +4,7 @@ title: "Experiences"
 permalink: /experiences/
 ---
 
-## 2.4GHz Patch Antenna Design (Capstone Project) — First Author  
+## 2.4GHz Patch Antenna Design (Capstone Project) 
 **Tohoku University** · **2022.10 – 2023.03** · **Grade: AA**
 
 - Advisor: **Noriharu Suematsu**
