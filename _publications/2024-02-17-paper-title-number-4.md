@@ -1,11 +1,14 @@
 ---
 title: "SAR-GMTI Simulation of T72 Based on DPCA"
 collection: publications
+authors:
+  - Junchi Liu
 category: conferences
 permalink: /publication/2022-11-01-SAR-GMTI Simulation of T72 Based on DPCA
 excerpt: 'Employed Displaced Phase Center Array(DPCA) algorithm for the ground moving target detection.'
 date: 2022-11-01
 venue: '2022 14th International Conference on Signal Processing Systems (ICSPS)'
+venue_short: 'ICSPS'
 paperurl: 'https://ieeexplore.ieee.org/document/10218599'
 citation: 'Junchi Liu, L. (2024). &quot;SAR-GMTI Simulation of T72 Based on DPCA.&quot; <i>2022 14th International Conference on Signal Processing Systems (ICSPS)</i>. '
 ---

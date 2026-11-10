@@ -1,6 +1,10 @@
 ---
 title: "Efficient, Adaptive Near-Field Beam Training based on Posterior Sampling"
 collection: publications
+authors:
+  - Junchi Liu
+  - Zijun Wang
+  - Rui Zhang
 category: conferences
 status: published
 permalink: /publication/2026-10-12-efficient-adaptive-near-field-beam-training-posterior-sampling
