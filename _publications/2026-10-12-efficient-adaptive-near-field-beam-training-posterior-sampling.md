@@ -1,13 +1,16 @@
 ---
-title: "Efficient, Adaptive Near-Field Beam Training based on Linear Bandit"
+title: "Efficient, Adaptive Near-Field Beam Training based on Posterior Sampling"
 collection: publications
-category: manuscripts
-permalink: /publication/2026-03-10-efficient-adaptive-near-field-beam-training-linear-bandit
+category: conferences
+status: published
+permalink: /publication/2026-10-12-efficient-adaptive-near-field-beam-training-posterior-sampling
+redirect_from:
+  - /publication/2026-03-10-efficient-adaptive-near-field-beam-training-linear-bandit
 excerpt: 'A linear bandit-based near-field beam training framework under multipath channels with up to 90% pilot overhead reduction and over 2 dB SNR gain.'
-date: 2026-03-10
-venue: 'IEEE Wireless Communications Letters (Submitted)'
+date: 2026-10-12
+venue: 'IEEE MILCOM Workshop'
 paperurl: 'https://arxiv.org/abs/2603.09893'
-citation: 'Junchi Liu, Zijun Wang, Rui Zhang. (2026). &quot;Efficient, Adaptive Near-Field Beam Training based on Linear Bandit.&quot; Submitted to <i>IEEE Wireless Communications Letters (WCL)</i>. arXiv:2603.09893.'
+citation: 'Junchi Liu, Zijun Wang, Rui Zhang. (2026). &quot;Efficient, Adaptive Near-Field Beam Training based on Posterior Sampling.&quot; <i>IEEE MILCOM Workshop</i>.'
 ---
 
 **Abstract:**  
