@@ -4,7 +4,10 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
-{% assign publications = site.publications | sort: 'date' | reverse %}
+{% assign dated_publications = site.publications | sort: 'date' | reverse %}
+{% assign first_author_publications = dated_publications | where_exp: "post", "post.authors.first == site.author.name" %}
+{% assign other_publications = dated_publications | where_exp: "post", "post.authors.first != site.author.name" %}
+{% assign publications = first_author_publications | concat: other_publications %}
 <ul class="publication-list">
   {% for post in publications %}
     <li>
