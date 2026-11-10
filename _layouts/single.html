@@ -20,7 +20,7 @@ layout: default
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
+    {% if page.date and page.show_date != false %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
     {% if page.modified %}<meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">{% endif %}
 
     <div class="page__inner-wrap">
@@ -37,7 +37,7 @@ layout: default
         {% if page.collection == 'teaching' %}
           <p> {{ page.type }}, <i>{{ page.venue }}</i>, {% if page.semester %}{{ page.semester }}{% else %}{{ page.date | default: "1900-01-01" | date: "%Y" }}{% endif %} </p>
         {% elsif page.collection == 'publications' %}
-          <p>{% if page.status == 'submitted' %}Submitted to{% else %}Published in{% endif %} <i>{{ page.venue }}</i>, {% if page.status %}{{ page.date | date: "%B %d, %Y" }}{% else %}{{ page.date | date: "%Y" }}{% endif %}</p>
+          <p>{% if page.status == 'submitted' %}Submitted to{% else %}Published in{% endif %} <i>{{ page.venue }}</i>{% unless page.show_date == false %}, {% if page.status %}{{ page.date | date: "%B %d, %Y" }}{% else %}{{ page.date | date: "%Y" }}{% endif %}{% endunless %}</p>
         {% elsif page.venue and page.date %}
           <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.date %}

@@ -4,9 +4,11 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
-{% assign dated_publications = site.publications | sort: 'date' | reverse %}
-{% assign first_author_publications = dated_publications | where_exp: "post", "post.authors.first == site.author.name" %}
-{% assign other_publications = dated_publications | where_exp: "post", "post.authors.first != site.author.name" %}
+{% assign dated_publications = site.publications | where_exp: "post", "post.show_date != false" | sort: 'date' | reverse %}
+{% assign undated_publications = site.publications | where_exp: "post", "post.show_date == false" %}
+{% assign ordered_publications = dated_publications | concat: undated_publications %}
+{% assign first_author_publications = ordered_publications | where_exp: "post", "post.authors.first == site.author.name" %}
+{% assign other_publications = ordered_publications | where_exp: "post", "post.authors.first != site.author.name" %}
 {% assign publications = first_author_publications | concat: other_publications %}
 <ul class="publication-list">
   {% for post in publications %}
@@ -22,8 +24,8 @@ author_profile: true
         {% endif %}
         <li>
           {% if post.status == 'submitted' %}Submitted to{% else %}Published in{% endif %}
-          <em>{{ post.venue_short | default: post.venue | escape }}</em> &middot;
-          <time datetime="{{ post.date | date_to_xmlschema }}">{% if post.status %}{{ post.date | date: "%B %d, %Y" }}{% else %}{{ post.date | date: "%Y" }}{% endif %}</time>
+          <em>{{ post.venue_short | default: post.venue | escape }}</em>{% unless post.show_date == false %} &middot;
+          <time datetime="{{ post.date | date_to_xmlschema }}">{% if post.status %}{{ post.date | date: "%B %d, %Y" }}{% else %}{{ post.date | date: "%Y" }}{% endif %}</time>{% endunless %}
         </li>
       </ul>
     </li>
